@@ -1,23 +1,23 @@
-import React from 'react';
-import TaskItem from './TaskItem';
-
-const TaskList = ({ tasks, onOpenModal }) => {
-  return (
-    <div className="card-container">
-      <div className="task-header">
-        <h1>Task List</h1>
-        <button className="btn-purple" onClick={onOpenModal}>
-          <i className="bi bi-plus"></i> Add Task
-        </button>
-      </div>
-
-      <div className="task-list">
-        {tasks.map(task => (
-          <TaskItem key={task.id} task={task} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default TaskList;
+import TaskItem from "./TaskItem"
+function TaskList({taskList,onDelete,onEdit})
+{
+    return(
+        <>
+        <section className="container d-flex flex-column gap-10">
+        {
+            taskList.map(item=>(
+            <TaskItem
+                key={item.id}
+                item={item}
+                onDelete={onDelete}
+                onEdit={onEdit}
+                
+            />
+            )
+            )
+        }
+        </section>
+        </>
+    )
+}
+export default TaskList

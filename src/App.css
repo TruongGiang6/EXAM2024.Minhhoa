@@ -1,213 +1,316 @@
-body { 
-    background-color: #f0f2f5; 
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-} 
+/* =========================================
+   1. RESET & BIẾN TOÀN CỤC
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size:20px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+:root {
+  --primary: #6c5ce7;
+  --danger: #ff7675;
+  --success: #00b894;
+  --warning: #fdcb6e;
+  --gray-light: #f1f2f6;
+  --text-main: #2d3436;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* =========================================
+   2. LAYOUT & FLEXBOX UTILITIES
+   ========================================= */
 .container {
-    max-width: 900px;
+  max-width: 800px;
+  margin: 0 auto;
 }
-.card-container { 
-    background: white; 
-    border-radius: 15px; 
-    padding: 25px; 
-    border: 1px solid #e0e6ed; 
-    max-width: 850px; 
-    margin: 30px auto; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-} 
-.task-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 25px; 
-} 
-.task-header h1 { 
-    font-weight: 800; 
-    font-size: 2rem; 
-    color: #2d3436; 
-    margin: 0; 
-} 
-.btn-purple { 
-    background-color: #6c5ce7; 
-    color: white; 
-    border: none; 
-    border-radius: 10px; 
-    padding: 8px 18px; 
-    font-weight: 600; 
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3); 
-    cursor: pointer;
-    font-size: 0.95rem;
-} 
-.btn-purple:hover { 
-    background-color: #5a4bcf; 
-} 
-.task-list { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-} 
-.task-item { 
-    display: grid;
-    grid-template-columns: 240px 140px 140px 60px 1fr;
-    align-items: center; 
-    background: #fff; 
-    border: 1px solid #f1f3f5; 
-    border-radius: 100px; 
-    padding: 15px 40px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02); 
-    color: #2d3436;
-    min-height: 90px;
-} 
-.task-section { 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center;
-} 
-.label-small { 
-    color: #b2bec3; 
-    font-size: 0.75rem; 
-    margin: 0; 
-    line-height: 1.2;
-    margin-bottom: 2px;
-} 
-.task-name-text { 
-    font-weight: 500; 
-    color: #2d3436; 
-    margin: 0; 
-    font-size: 1rem;
-    line-height: 1.2;
-    padding-bottom: 8px; /* Thêm khoảng trống cho chân chữ (g, y, p) */
-    white-space: nowrap;
-    overflow: visible; /* Cho phép hiển thị nét đuôi chữ */
-    text-overflow: ellipsis;
-} 
-.priority-text { 
-    font-weight: 700; 
-    margin: 0; 
-    font-size: 1.1rem;
-    line-height: 1.2;
-    padding-bottom: 8px;
-} 
-.priority-high { color: #ff5e5e; } 
-.priority-medium { color: #fdcb6e; } 
-.priority-low { color: #00b894; } 
 
-.status-badge { 
-    background: #f1f3f5; 
-    color: #636e72; 
-    border-radius: 12px; 
-    font-size: 0.85rem; 
-    font-weight: 600; 
-    width: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 34px;
-} 
-.status-indicator { 
-    width: 28px; 
-    height: 28px; 
-    border-radius: 50%; 
-    border: 3px solid #dfe6e9; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-} 
-.status-indicator.done { 
-    border-color: #6c5ce7; 
-} 
-.status-indicator.progress { 
-    border-color: #dfe6e9; 
-    border-top-color: #6c5ce7; 
-    border-right-color: #6c5ce7; 
-} 
-.action-btns { 
-    display: flex; 
-    gap: 18px; 
-    font-size: 1.3rem; 
-    align-items: center;
-    justify-self: end;
-} 
-.icon-btn { 
-    cursor: pointer; 
-    color: #2d3436; 
-    transition: transform 0.2s; 
-    display: flex;
-    align-items: center;
-} 
-.icon-btn:hover {
-    transform: scale(1.1);
+.d-flex {
+  display: flex;
 }
-.icon-btn.delete { color: #ff7675; } 
+.text-center{
+  text-align: center;
+}
+.flex-row {
+  flex-direction: row;
+}
 
+.flex-column {
+  flex-direction: column;
+}
+.flex-end{
+  justify-content: flex-end;
+}
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
+  gap: 15px;
+}
+
+/* =========================================
+   3. COMPONENTS (THÀNH PHẦN GIAO DIỆN)
+   ========================================= */
+/* Thẻ Card chứa nội dung */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* Danh sách Task */
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  background: var(--gray-light);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.task-col {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  gap: 5px;
+}
+/* =========================================
+   4. NÚT BẤM & NHÃN (BUTTONS & BADGES)
+   ========================================= */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary:target .modal-overlay {
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+}
+
+.btn-icon {
+  background: none;
+  color: #555;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Màu trạng thái */
+.bg-high {
+  background-color: var(--danger);
+}
+
+.color-high{
+  color: var(--danger)
+}
+
+.bg-medium {
+  background-color: var(--warning);
+  color: #333;
+}
+
+.bg-low {
+  background-color: var(--success);
+}
+
+.color-low {
+  color: var(--success)
+}
+.color-medium{
+  color:var(--warning)
+}
+.color-primary{
+  color:var(--primary)
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.color-light{
+  color: var(--gray-light);
+}
+.bg-green{
+  background-color: rgba(0, 128, 0, 0.2);
+}
+
+/* =========================================
+   6. MODAL / POPUP (FORM ADD TASK)
+   ========================================= */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.add-task-form { 
-    background: white; 
-    border-radius: 15px; 
-    padding: 30px; 
-    border: 1px solid #e0e6ed; 
-    width: 90%;
-    max-width: 500px; 
-    position: relative; 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-} 
-.form-title { 
-    font-weight: 700; 
-    font-size: 1.3rem; 
-    margin-bottom: 20px; 
-} 
-.close-form { 
-    position: absolute; 
-    top: 20px; 
-    right: 20px; 
-    cursor: pointer; 
-    color: #b2bec3; 
-    font-size: 1.3rem;
-} 
-.p-btn-group { 
-    display: flex; 
-    gap: 12px; 
-    margin-bottom: 15px;
-} 
-.p-btn { 
-    border: 1px solid #dfe6e9; 
-    background: white; 
-    border-radius: 8px; 
-    padding: 6px 20px; 
-    font-weight: 600; 
-    transition: all 0.2s; 
-    color: #636e72;
-    cursor: pointer;
-} 
-.p-btn.active.high { border-color: #ff5e5e; color: #ff5e5e; background: #fffafa; } 
-.p-btn.active.medium { border-color: #fdcb6e; color: #fdcb6e; background: #fffdf9; } 
-.p-btn.active.low { background: #00b894; color: white; border-color: #00b894; } 
-.btn-gray { 
-    background: #8395a7; 
-    color: white; 
-    border: none; 
-    border-radius: 10px; 
-    padding: 10px 30px; 
-    font-weight: 600; 
+.modal-start{
+  opacity: 1;
+  visibility:visible;
 }
 
-.btn-gray:hover { 
-    background: #25a6d5; 
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
 }
 
-.cursor-pointer { cursor: pointer; }
+/* Khi modal hiện lên, trượt cái hộp vào vị trí cũ */
+.modal-overlay:target .modal-content {
+  transform: translateY(0);
+}
+.modal-overlay:target {
+  opacity: 0;
+  visibility: hidden;
+}
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #888;
+  text-decoration: none;
+}
 
+.btn-close:hover {
+  color: var(--danger);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*custom*/
+.bold {
+  width: 600;
+}
+
+.text-size-26 {
+  font-size: 26px;
+}
+
+.label {
+  font-size: 16px;
+  color: #9aa0a6;
+}
+
+
+
+.input {
+  border-radius: 13px;
+  padding: 12px;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.btn-high {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  background-color: transparent;
+}
+
+.btn-medium {
+ border:1px solid var(--warning);
+  color: var(--warning);
+  background-color: transparent;
+}
+
+.btn-low {
+  background-color: var(--success);
+  color: var(--gray-light)
+}
+.text-title{
+  font-size: 30px;
+  font-weight: 800;
+ 
+}
+.text-error{
+  font-size: 15px;
+  color:var(--danger);
+}
+.text-through{
+  text-decoration: line-through;
+}
+.mb-2{
+  margin-bottom: 8px;
+}

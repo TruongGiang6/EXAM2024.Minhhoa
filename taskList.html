@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/App.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container d-flex space-between mg-2">
+        <p class="text-title">Task list</p>
+        <button class="btn bg-primary color-light"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                width="24px" fill="#1f1f1f">
+                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+            </svg>Add Task</button>
+    </div>
+    <section class="container d-flex flex-column gap-10">
+        <article class="d-flex space-between task-item">
+            <div class="task-col">
+                <p class="label">Task</p>
+                <p>Cong viec</p>
+            </div>
+            <div class="task-col">
+                <p class="label">Priority</p>
+                <p>Muc do</p>
+            </div>
+            <div class="task-col justify-center">
+                <p class="label">Todo</p>
+            </div>
+            <div class="d-flex">
+                <div><button class="btn btn-primary color-light">Them</button></div>
+                <div><button class="btn bg-high color-light">Xoa</button></div>
+            </div>
+        </article>
+    </section>
+    <div class="modal-overlay">
+        <div class="modal-content d-flex flex-column gap-15">
+            <p class="text-title">Add task</p>
+            <div class="d-flex flex-column gap-10">
+                <p class="label">Task</p>
+                <input type="text" class="input" placeholder="Type your task here...">
+            </div>
+            <div class="d-flex flex-column gap-10">
+                <p class="label">Priority</p>
+                <div class="d-flex gap-10">
+                    <button class="btn btn-high">High</button>
+                    <button class="btn btn-medium">Medium</button>
+                    <button class="btn btn-low">Low</button>
+                </div>
+                <div class="d-flex flex-end">
+                    <button class="btn bg-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
