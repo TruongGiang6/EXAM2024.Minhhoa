@@ -1,27 +1,30 @@
 [
     {
         "id": 1,
-        "name": "Lam bai tap ve nha",
-        "priority": "High"
+        "name": "Go to gym",
+        "priority": "High",
+        "status": "ToDo",
+        "completed": false
     },
     {
         "id": 2,
-        "name": "Don dep phong",
-        "priority": "Medium"
+        "name": "Read a book",
+        "priority": "Low",
+        "status": "Done",
+        "completed": true
     },
     {
         "id": 3,
-        "name": "Mua thuc pham",
-        "priority": "High"
+        "name": "Go to market",
+        "priority": "Medium",
+        "status": "InProgress",
+        "completed": false
     },
     {
         "id": 4,
-        "name": "Tap the duc",
-        "priority": "Low"
-    },
-    {
-        "id": 5,
         "name": "Doc sach",
-        "priority": "Medium"
+        "priority": "Medium",
+        "status": "ToDo",
+        "completed": false
     }
 ]

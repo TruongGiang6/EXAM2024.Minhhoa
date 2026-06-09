@@ -5,188 +5,228 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size:20px;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
   --primary: #6c5ce7;
-  --danger: #ff7675;
-  --success: #00b894;
-  --warning: #fdcb6e;
-  --gray-light: #f1f2f6;
-  --text-main: #2d3436;
+  --secondary: #e5e6e8;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+  --warning: #f1c40f;
+  --text-main: #333;
+  --text-secondary: #90a0a9;
 }
 
 body {
-  background-color: #f8f9fa;
+  background-color: #f8f9fc;
   color: var(--text-main);
   line-height: 1.6;
-  padding: 20px;
+  padding: 20px 40px;
 }
 
 /* =========================================
    2. LAYOUT & FLEXBOX UTILITIES
    ========================================= */
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .d-flex {
   display: flex;
 }
-.text-center{
-  text-align: center;
-}
-.flex-row {
-  flex-direction: row;
+
+.align-center {
+  align-items: center;
 }
 
 .flex-column {
   flex-direction: column;
-}
-.flex-end{
-  justify-content: flex-end;
-}
-.align-center {
-  align-items: center;
 }
 
 .space-between {
   justify-content: space-between;
 }
 
-.space-around {
-  justify-content: space-around;
-}
-
 .justify-center {
   justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }
 
 .gap-10 {
   gap: 10px;
 }
 
-.gap-15 {
-  gap: 15px;
+.mg-2 {
+  margin: 20px 0;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 /* =========================================
    3. COMPONENTS (THÀNH PHẦN GIAO DIỆN)
    ========================================= */
-/* Thẻ Card chứa nội dung */
-.card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
+
+/* Hàng Công Việc */
+.task-item-card {
+  background: white;
+  border-radius: 12px; /* Bo góc nhỏ hơn */
+  padding: 20px 30px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03); /* Đổ bóng nhẹ cho từng hàng */
 }
 
-/* Danh sách Task */
-.task-list {
-  list-style: none;
+.task-item-card:last-child {
+  margin-bottom: 0;
 }
 
-.task-item {
-  background: var(--gray-light);
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 10px;
-  transition: transform 0.2s;
-}
-
-.task-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 .task-col {
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   gap: 5px;
 }
+
+.task-col.flex-end {
+  align-items: flex-end;
+}
+
+/* Tiêu Đề */
+.text-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1e26;
+}
+
+/* Văn bản Công việc */
+.text-task {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.text-through {
+  text-decoration: line-through;
+  color: #a0a8b2;
+}
+
+/* Nhãn Nhỏ */
+.small-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
 /* =========================================
    4. NÚT BẤM & NHÃN (BUTTONS & BADGES)
    ========================================= */
+
+/* Nút Add Task */
 .btn {
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
-  background-color: white;
-  transition: opacity 0.2s;
+  font-weight: 700;
+  transition: all 0.2s;
+  color: white;
+  text-decoration: none;
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-.btn-primary:target .modal-overlay {
-  opacity: 1;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-}
-
-.btn-danger {
-  background-color: var(--danger);
-}
-
-.btn-icon {
-  background: none;
-  color: #555;
-  padding: 5px;
-  font-size: 16px;
-}
-
-.badge {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: white;
-}
-
-/* Màu trạng thái */
-.bg-high {
-  background-color: var(--danger);
-}
-
-.color-high{
-  color: var(--danger)
-}
-
-.bg-medium {
-  background-color: var(--warning);
-  color: #333;
-}
-
-.bg-low {
-  background-color: var(--success);
-}
-
-.color-low {
-  color: var(--success)
-}
-.color-medium{
-  color:var(--warning)
-}
-.color-primary{
-  color:var(--primary)
-}
 .bg-primary {
   background-color: var(--primary);
 }
-.color-light{
-  color: var(--gray-light);
+
+/* Nhãn Trạng Thái */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-main);
 }
-.bg-green{
-  background-color: rgba(0, 128, 0, 0.2);
+
+.bg-todo {
+  background-color: var(--secondary);
+}
+
+.bg-inprogress {
+  background-color: var(--secondary);
+}
+
+.bg-done {
+  background-color: var(--secondary);
+}
+
+/* Màu Mức Ưu Tiên */
+.color-high {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.color-medium {
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.color-low {
+  color: var(--success);
+  font-weight: 700;
+}
+
+/* Vòng Tròn Checkbox */
+.circular-checkbox {
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-checkbox.checked {
+  background-color: var(--primary);
+}
+
+/* Action Icons Outlined */
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.icon-pencil {
+  color: var(--primary);
+}
+
+.icon-trash {
+  color: var(--danger);
+}
+
+.color-primary {
+  color: var(--primary);
 }
 
 /* =========================================
@@ -198,119 +238,110 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   opacity: 0;
+  visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.modal-start{
-  opacity: 1;
-  visibility:visible;
-}
 
+.modal-start {
+  opacity: 1;
+  visibility: visible;
+}
 
 .modal-content {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
   max-width: 500px;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transform: translateY(-20px);
   transition: transform 0.3s ease;
 }
 
-/* Khi modal hiện lên, trượt cái hộp vào vị trí cũ */
-.modal-overlay:target .modal-content {
+.modal-overlay.modal-start .modal-content {
   transform: translateY(0);
 }
-.modal-overlay:target {
-  opacity: 0;
-  visibility: hidden;
-}
+
 .btn-close {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: #888;
-  text-decoration: none;
+  color: #a0a8b2;
 }
 
 .btn-close:hover {
   color: var(--danger);
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/*custom*/
-.bold {
-  width: 600;
-}
-
-.text-size-26 {
-  font-size: 26px;
-}
-
+/* Các nhãn trong Form */
 .label {
-  font-size: 16px;
-  color: #9aa0a6;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
 }
 
-
-
+/* Ô Input trong Form */
 .input {
-  border-radius: 13px;
+  border: 1px solid #e0e4e8;
+  border-radius: 10px;
   padding: 12px;
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
+  font-size: 16px;
+  color: var(--text-main);
+  transition: border-color 0.2s;
 }
 
-.btn-high {
-  border: 1px solid var(--danger);
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Nút Submit trong Form */
+.btn-add-submit {
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Nút Mức Ưu Tiên trong Form */
+.btn-status {
+  padding: 8px 16px;
+  border: 1px solid #e0e4e8;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.btn-status:hover {
+  background-color: #f8f9fc;
+}
+
+.btn-high { color: var(--danger); border-color: var(--danger); }
+.btn-medium { color: var(--warning); border-color: var(--warning); }
+.btn-low { color: var(--success); border-color: var(--success); }
+
+/* Văn bản Lỗi */
+.text-error {
+  font-size: 13px;
   color: var(--danger);
-  background-color: transparent;
-}
-
-.btn-medium {
- border:1px solid var(--warning);
-  color: var(--warning);
-  background-color: transparent;
-}
-
-.btn-low {
-  background-color: var(--success);
-  color: var(--gray-light)
-}
-.text-title{
-  font-size: 30px;
-  font-weight: 800;
- 
-}
-.text-error{
-  font-size: 15px;
-  color:var(--danger);
-}
-.text-through{
-  text-decoration: line-through;
-}
-.mb-2{
-  margin-bottom: 8px;
 }
